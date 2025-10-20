@@ -1,0 +1,12 @@
+﻿services:
+  - type: web
+    name: Veggies_EXE201
+    env: dotnet
+    buildCommand: dotnet publish -c Release -o out
+    startCommand: dotnet out/Veggies_EXE201.dll
+    branch: main
+    region: singapore
+    plan: free
+    envVars:
+      - key: ConnectionStrings__DefaultConnection
+        value: "Server=tcp:<HOST>,<PORT>;Initial Catalog=<DATABASE>;User ID=<USER>;Password=<PASSWORD>;TrustServerCertificate=True;Encrypt=True;"
